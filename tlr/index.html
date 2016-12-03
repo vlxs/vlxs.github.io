@@ -36,7 +36,10 @@
                     </h3>
                     <form class="form-horizontal" ng-cloak>
 
-                        <div ng-repeat="char in characters" class="form-group">
+                        <div ng-repeat="(index,char) in characters" class="form-group"
+                                    uib-tooltip uib-tooltip-html="char.fileStr"
+                                    tooltip-append-to-body="true"
+                                    tooltip-placement="{{ index > characters.length / 2 ? 'left-bottom' : 'left-top' }}">
                             <label class="col-sm-6 control-label">{{char.name}}</label>
                             <div class="col-sm-6">
                                 <select class="form-control"

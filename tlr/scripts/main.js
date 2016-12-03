@@ -45,7 +45,7 @@ angular.module('app', [ 'ui.bootstrap', 'ngStorage' ])
     .constant('CHARACTERS', CHARACTERS)
     .constant('RANKINGS', RANKINGS)
     .constant('RANKING_ORDER', RANKING_ORDER)
-    .controller('MainController', function($scope, $timeout, $localStorage, $canvas) {
+    .controller('MainController', function($scope, $timeout, $sce, $localStorage, $canvas) {
 
         $scope.characters = angular.extend([ ], CHARACTERS);
         $scope.characters.sort(function(x,y) { return x.name.localeCompare(y.name); });
@@ -56,6 +56,7 @@ angular.module('app', [ 'ui.bootstrap', 'ngStorage' ])
 
         $scope.rankings = { };
         for (var i=0;i<CHARACTERS.length;++i) {
+            CHARACTERS[i].fileStr = $sce.trustAsHtml('<img src="assets/' + CHARACTERS[i].file + '">')
             if (CHARACTERS[i].hasOwnProperty('default')) continue;
             CHARACTERS[i].default = RANKING_ORDER[Math.floor(Math.random() * (RANKING_ORDER.length - 1)) + 1];
         }
