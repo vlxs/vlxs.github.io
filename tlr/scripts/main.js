@@ -30,6 +30,7 @@ var CHARACTERS = [
     { name: 'Run', file: 'run.png'},
     { name: 'Ryouko', file: 'ryouko.png'},
     { name: 'Saki', file: 'saki.png'},
+    { name: 'Sephie', file: 'sephie.png'},
     { name: 'Shizu', file: 'shizu.png'},
     { name: 'Tearju', file: 'tearju.png'},
     { name: 'Yami (darkness)', file: 'darkness.png'},
@@ -80,10 +81,6 @@ angular.module('app', [ 'ui.bootstrap', 'ngStorage' ])
         /***********************/
 
         if ($localStorage.rankings) angular.extend($scope.rankings, $localStorage.rankings);
-        else {
-
-        }
-
         $localStorage.rankings = $scope.rankings;
 
         $timeout($scope.update);
