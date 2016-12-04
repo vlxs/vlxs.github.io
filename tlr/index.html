@@ -9,64 +9,25 @@
 
         <title>TLR Ranking Generator</title>
 
-        <script src="libs/jquery/jquery.min.js"></script>
-        <script src="libs/angular/angular.min.js"></script>
-        <script src="libs/bootstrap/js/bootstrap.min.js"></script>
-        <script src="libs/ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
-        <script src="libs/ngStorage/ngStorage.min.js"></script>
-        <script src="libs/fabric.js/fabric.min.js"></script>
+        <script src="../shared/libs/jquery/jquery.min.js"></script>
+        <script src="../shared/libs/angular/angular.min.js"></script>
+        <script src="../shared/libs/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../shared/libs/ui-bootstrap/ui-bootstrap-tpls.min.js"></script>
+        <script src="../shared/libs/ngStorage/ngStorage.min.js"></script>
+        <script src="../shared/libs/fabric.js/fabric.min.js"></script>
 
-        <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../shared/libs/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../shared/css/main.css">
 
-        <script src="scripts/main.js"></script>
-        <script src="scripts/canvas.js"></script>
-        <link rel="stylesheet" href="css/main.css">
+        <script src="../shared/scripts/main.js"></script>
+        <script src="../shared/scripts/canvas.js"></script>
+        <script src="index.js"></script>
 
     </head>
 
-    <body ng-controller="MainController">
-        <div class="container">
-            <div class="row">
-
-                <!-- Choices -->
-                <div class="col-sm-4" id="left">
-                    <h3 class="page-header">
-                        Rankings
-                        <div><small><small>Initial rankings are random</small></small></div>
-                    </h3>
-                    <form class="form-horizontal" ng-cloak>
-
-                        <div ng-repeat="(index,char) in characters" class="form-group"
-                                    uib-tooltip uib-tooltip-html="char.fileStr"
-                                    tooltip-append-to-body="true"
-                                    tooltip-placement="{{ index > characters.length / 2 ? 'left-bottom' : 'left-top' }}">
-                            <label class="col-sm-6 control-label">{{char.name}}</label>
-                            <div class="col-sm-6">
-                                <select class="form-control"
-                                    ng-model="rankings[char.name]"
-                                    ng-options="rank.value as rank.label for rank in availableRankings"
-                                    ng-change="update()"></select>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-
-                <!-- Canvas -->
-                <div class="col-sm-8" id="right">
-                    <h3 class="page-header">
-                        Preview
-                        <button class="btn btn-primary pull-right" ng-click="download()">
-                            <span class="glyphicon glyphicon-download-alt"></span>
-                            Download
-                        </button>
-                        <div><small><small>Rescaled to fit<small></small></div>
-                    </h3>
-                    <canvas id="canvas"></canvas>
-                </div>
-
-            </div>
-        </div>
+    <body
+		ng-controller="MainController"
+		ng-include="'../shared/views/main.html'">
     </body>
 
 </html>

@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 .form-horizontal {
     margin-top: 15px;
 }

@@ -78,11 +78,15 @@ angular.module('app').factory('$canvas', function(CHARACTERS, RANKINGS, RANKING_
 
         var height = groups.filter(function(x) { return x; }).length * 300 + 8;
         var width = (1 + groups.reduce(function(p,n) { return Math.max(p, n.length); }, 0)) * 195;
-        canvas.clear();
-        canvas.setDimensions({ width: width, height: height });
-        canvas.setBackgroundColor('white');
 
-        var leftHeight = $('#left form').height();
+        canvas.clear();
+		canvas.setDimensions({ width: width, height: height });
+		canvas.setBackgroundColor('white');
+
+		var pageHeight = window.innerHeight;
+		var topLeftHeight = $('#left h3').height() + 60;
+        var bottomLeftHeight = $('#left form').height();
+		var leftHeight = Math.max(bottomLeftHeight, pageHeight - topLeftHeight);
         var maxWidth = Math.min($('#right').width(), Math.round(width * leftHeight / height))
         var maxHeight = height * maxWidth / width;
         $('#canvas, .canvas-container').css({ maxHeight: maxHeight, maxWidth: maxWidth });
