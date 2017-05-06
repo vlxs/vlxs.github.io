@@ -1,5 +1,5 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .form-horizontal {
@@ -36,4 +36,8 @@ h3 > div {
 
 button + button {
     margin-right: 5px;
+}
+
+.hoverImg {
+    width: 100px;
 }

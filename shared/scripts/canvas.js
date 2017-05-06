@@ -2,6 +2,12 @@
     
 angular.module('app').factory('$canvas', function(CHARACTERS, RANKINGS, RANKING_ORDER) {
 
+    CHARACTERS = CHARACTERS.map(function(c) {
+        if (c.constructor == String)
+            return { name: c, file: c.toLowerCase() + '.png' };
+        return c;
+    });
+
     var service = { };
     var canvas = null;
 
@@ -80,13 +86,13 @@ angular.module('app').factory('$canvas', function(CHARACTERS, RANKINGS, RANKING_
         var width = (1 + groups.reduce(function(p,n) { return Math.max(p, n.length); }, 0)) * 195;
 
         canvas.clear();
-		canvas.setDimensions({ width: width, height: height });
-		canvas.setBackgroundColor('white');
+        canvas.setDimensions({ width: width, height: height });
+        canvas.setBackgroundColor('white');
 
-		var pageHeight = window.innerHeight;
-		var topLeftHeight = $('#left h3').height() + 60;
+        var pageHeight = window.innerHeight;
+        var topLeftHeight = $('#left h3').height() + 60;
         var bottomLeftHeight = $('#left form').height();
-		var leftHeight = Math.max(bottomLeftHeight, pageHeight - topLeftHeight);
+        var leftHeight = Math.max(bottomLeftHeight, pageHeight - topLeftHeight);
         var maxWidth = Math.min($('#right').width(), Math.round(width * leftHeight / height))
         var maxHeight = height * maxWidth / width;
         $('#canvas, .canvas-container').css({ maxHeight: maxHeight, maxWidth: maxWidth });

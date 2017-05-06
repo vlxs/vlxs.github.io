@@ -13,29 +13,26 @@ var RANKINGS = [
 ];
 
 var CHARACTERS = [
-    'Aya',
-    { name: 'Celine', file: 'celine.png', default: 'P', },
-    'Haruna',
-    'Kyouko',
-    'Lala',
-    'Mea',
-    'Mikan',
-    'Mio',
-    'Momo',
-    'Nana',
-    'Nemesis',
-    'Riko',
-    'Rin',
-    'Risa',
-    'Run',
-    'Ryouko',
-    'Saki',
-    'Sephie',
-    'Shizu',
-    'Tearju',
-    { name: 'Yami (darkness)', file: 'darkness.png' },
-    'Yami',
-    'Yui',
+    'Ann',
+    'Makoto',
+    'Futaba',
+    'Haru',
+    'Justine',
+    'Caroline',
+    'Lavenza',
+    { name: 'Mumumu', file: 'chihaya.png' },
+    'Tae',
+    'Kawakami',
+    { name: 'Ohya', file: 'ohya.png', default: 'F' },
+    'Hifumi',
+    'Sae',
+    { name: 'Shadow Sae', file: 'shadow-sae.png' },
+    'Shiho',
+    'Wakaba',
+    'Mika',
+    { name: 'Ms. Chouno', file: 'chouno.png' },
+    { name: 'Ms. Usami', file: 'usami.png' },
+    { name: 'Principal-kun', file: 'principal.png', default: 'P' }
 ];
 
 var RANKING_ORDER = [ 'P', 'SS', 'S', 'A', 'B', 'C', 'D', 'E', 'F' ];
@@ -45,7 +42,7 @@ angular.module('app')
     .constant('RANKINGS', RANKINGS)
     .constant('RANKING_ORDER', RANKING_ORDER)
     .config(function($localStorageProvider) {
-        $localStorageProvider.setKeyPrefix('tlr');
+        $localStorageProvider.setKeyPrefix('yuragi');
     });
 
 })();
