@@ -42,7 +42,7 @@ angular.module('app')
     .constant('RANKINGS', RANKINGS)
     .constant('RANKING_ORDER', RANKING_ORDER)
     .config(function($localStorageProvider) {
-        $localStorageProvider.setKeyPrefix('yuragi');
+        $localStorageProvider.setKeyPrefix('p5');
     });
 
 })();
