@@ -10,6 +10,7 @@ var RANKINGS = [
     { label: 'D', value: 'D' },
     { label: 'E', value: 'E' },
     { label: 'F', value: 'F' },
+    { label: '(Exclude)', value: null },
 ];
 
 var CHARACTERS = [
@@ -26,13 +27,13 @@ var CHARACTERS = [
     { name: 'Ohya', file: 'ohya.png', default: 'F' },
     'Hifumi',
     'Sae',
-    { name: 'Shadow Sae', file: 'shadow-sae.png' },
-    'Shiho',
-    'Wakaba',
-    'Mika',
-    { name: 'Ms. Chouno', file: 'chouno.png' },
-    { name: 'Ms. Usami', file: 'usami.png' },
-    { name: 'Principal-kun', file: 'principal.png', default: 'P' }
+    { name: 'Shadow Sae', file: 'shadow-sae.png', default: null },
+    { name: 'Shiho', file: 'shiho.png', default: null },
+    { name: 'Principal-kun', file: 'principal.png', default: 'P' },
+    { name: 'Mika', file: 'mika.png', default: null },
+    { name: 'Ms. Chouno', file: 'chouno.png', default: null },
+    { name: 'Ms. Usami', file: 'usami.png', default: null },
+    { name: 'Wakaba', file: 'wakaba.png', default: null }
 ];
 
 var RANKING_ORDER = [ 'P', 'SS', 'S', 'A', 'B', 'C', 'D', 'E', 'F' ];
