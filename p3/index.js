@@ -23,6 +23,7 @@ var CHARACTERS = [
     { name: 'Kikuno', file: 'kikuno.png', default: null },
     { name: 'Maiko', file: 'maiko.png', default: 'P' },
     'Metis',
+    'Mitsuru',
     { name: 'Natsuki', file: 'natsuki.png', default: null },
     'Rio',
     'Saori',
