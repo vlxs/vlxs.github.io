@@ -10,19 +10,25 @@ var RANKINGS = [
     { label: 'D', value: 'D' },
     { label: 'E', value: 'E' },
     { label: 'F', value: 'F' },
+    { label: '(Exclude)', value: null }
 ];
 
 var CHARACTERS = [
     'Chisaki',
     'Chitose',
+	{ name: 'Harumu', file: 'harumu.png', default: null },
     'Hibari',
+	{ name: 'Hiyori', file: 'hiyori.png', default: null },
     'Karura',
     { name: 'Koyuzu', file: 'koyuzu.png', default: 'P' },
     'Matora',
     'Nonko',
     'Oboro',
-    'Renge',
+	{ name: 'Renge', file: 'renge.png', default: null },
     'Sagiri',
+	{ name: 'Seri', file: 'seri.png', default: null },
+	'Shion',
+	{ name: 'Urara', file: 'urara.png', default: null },
     'Yaya',
     'Yuuna'
 ];
